@@ -13,7 +13,7 @@ Things you may want to cover:
  
 * execution procedure
 
-  $ git clone git@github.com:CAMOESs/Projectend.git
+  $ git clone https://github.com/CAMOESs/project.git
   
   $ cd Projectend
   
