@@ -38,7 +38,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
-# Projectend
+# Project
 catalog design
 https://docs.google.com/spreadsheets/d/1BxmknJ9Pe0kR-Kas7ZnIe_-YH0dbkcmFNndiqTvd6Pc/edit?usp=sharing
 
