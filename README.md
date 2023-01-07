@@ -61,3 +61,11 @@ ER
 screen transition diagram
 
   https://cacoo.com/diagrams/azWghdFKL5uUC98o/53EA8
+  
+  
+  ![transition](https://user-images.githubusercontent.com/103535400/211168318-5859c613-7151-4963-915a-252e58583cd4.png)
+
+  
+  
+  
+  
