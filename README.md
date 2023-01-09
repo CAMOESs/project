@@ -57,8 +57,9 @@ wireframe
 ER
 
   https://cacoo.com/diagrams/pIvlhYJi3h8AYGRM/24ABF
+  
+  ![eR](https://user-images.githubusercontent.com/103535400/211271458-24b40fc7-e807-4de7-a020-48d19527342e.png)
 
-  ![er](https://user-images.githubusercontent.com/103535400/211168383-b54ff743-d178-4396-bd52-e99b67898110.png)
 
 
 screen transition diagram
