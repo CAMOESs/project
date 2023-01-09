@@ -40,14 +40,17 @@ Things you may want to cover:
 * ...
 # Project
 catalog design
+
 https://docs.google.com/spreadsheets/d/1BxmknJ9Pe0kR-Kas7ZnIe_-YH0dbkcmFNndiqTvd6Pc/edit?usp=sharing
 
 
 table definition
+
 https://docs.google.com/spreadsheets/d/1EckvAHFubtLGNqFwwivDDtAFyFseRBA71wEU3bFtUxg/edit?usp=sharing
 
 
 wireframe
+
  https://cacoo.com/diagrams/bsLQ70EBRw4DFks1/60365?reload_rt=1668495050735_0
 
 
@@ -63,9 +66,7 @@ screen transition diagram
   https://cacoo.com/diagrams/azWghdFKL5uUC98o/53EA8
   
   
-  ![transition](https://user-images.githubusercontent.com/103535400/211168318-5859c613-7151-4963-915a-252e58583cd4.png)
+  
+  ![diagram](https://user-images.githubusercontent.com/103535400/211270711-8b90fc14-e8d0-4d77-980a-96281ccc25f1.png)
 
-  
-  
-  
   
