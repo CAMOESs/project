@@ -39,6 +39,14 @@ Things you may want to cover:
 
 * ...
 # Project
+
+control List
+
+https://docs.google.com/spreadsheets/d/1jKaVbc5mCbNj7ljj5vI0JwlSEYwE0H0ZgaoXghk4d6M/edit?usp=sharing
+
+![controle](https://user-images.githubusercontent.com/103535400/211517926-d2c00413-be2e-4a05-95d0-e2c7029ed167.png)
+
+
 catalog design
 
 https://docs.google.com/spreadsheets/d/1BxmknJ9Pe0kR-Kas7ZnIe_-YH0dbkcmFNndiqTvd6Pc/edit?usp=sharing
