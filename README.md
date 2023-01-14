@@ -73,8 +73,9 @@ screen transition diagram
 
   https://cacoo.com/diagrams/azWghdFKL5uUC98o/53EA8
   
+  ![trans2](https://user-images.githubusercontent.com/103535400/212467527-e48dde7e-595d-489f-9ebb-fce1ba24ec70.png)
+
   
-  ![trans](https://user-images.githubusercontent.com/103535400/212466847-a083f252-8db5-4d7a-b0bb-e9a2ad6611c6.png)
 
 
   
