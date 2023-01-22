@@ -1,0 +1,100 @@
+
+<% if current_user %>
+    
+    <div class="user_index  site">
+        
+        
+        <nav class="user_side">
+            <%= link_to "All listing",products_path, class:" side_link"%>
+            
+            <% if @nbrAR != 0 %>
+
+                <%= link_to "Archive", archives_path, class:" side_link"%>
+
+            <% end %>
+            <%= link_to "setting",home_private_path, class:"profile side_link"%>
+        </nav>
+        <main class="user_main">
+
+        
+
+
+
+        <% if  Product.find(@all2).count != 0 %>
+                <% (0...Product.find(@all2).count).each do |product|  %>
+                    
+                    <div class="user_card">
+                        <p class="">
+                            <strong>Price:</strong>
+                            <%= Product.find(@all2)[product].price %> $
+                        </p>
+
+                        <p class="">
+                            <strong>Description:</strong>
+                            <%= Product.find(@all2)[product].description %>
+                        </p>
+                            
+                        <%= link_to "show", product_path(Product.find(@all2)[product].id), class:"messages show" %>
+                        <%= link_to 'Destroy', product_path(Product.find(@all2)[product].id), method: :delete, data: { confirm: 'Are you sure?' } , class:"danger"%>
+                        </div>
+                    </a>
+                <% end %>
+            <% else %>
+                <div class="absence">
+                No publication
+                </div>
+            <% end %>
+
+        </main>
+        <aside class="user_aside">
+            <div class="_user_infos">
+                <p class="user_info">
+                    <strong>Name:</strong>
+                    <%= @user.pseudo %>
+                </p>
+            
+                <p class="user_info">
+                    <strong>Email:</strong>
+                    <%= @user.email %>
+                </p>
+
+                <p class="user_info">
+                    <strong>Message received:</strong> 
+                    <% if @user.messages.count == 0 %>
+                        pas de message
+                    <%else %>
+                        <%= @user.messages.count %>
+                        
+                    <% end %>
+                </p> 
+
+                    <p class="user_info">
+                        <strong>Archive:</strong> 
+                        <%= @nbrAR %>
+                            
+                    </p> 
+
+            </div>
+        </aside>
+    </div>
+<% else %>
+    <div class="home_index">
+    <div class="home_intro">
+        <div></div>
+        <div class="home_text">
+            <h1>Welcome to my apart </h1>
+            <p>the site which offers you samples of 
+            contribution<br/>  defying all competition and at a lower cost you can  <br/>
+            now visit the list of  available or create an account<br/> and offer your 
+            services. Visit 
+            <%= link_to 'Linsting', products_path, class:"_link plus" %>
+            </p>
+        </div>
+    </div>
+    <div class="home_sign">
+        <%= link_to "Sign in", new_user_session_path ,class:"home_link sign_in"%>
+        <%= link_to "Sign up", new_user_registration_path ,class:"home_link"%>
+    </div>
+    </div>
+
+<% end %>

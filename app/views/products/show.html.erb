@@ -1,0 +1,46 @@
+<div class="user_index container site _site">
+<div class="user_main">
+<div class="user_card dispo">
+<div class="_product2">
+<% (0...@product.images.count).each do |product|  %>
+  <div class="img_product">
+      <%= link_to image_tag(@product.banner(product)),@product.images[product]  %>
+  </div>
+<% end %>
+</div>
+<div class="dispo2">
+<p>
+  <strong>Price:</strong>
+  <%= @product.price %> $
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @product.description %>
+</p>
+<p>
+  <strong>Owner:</strong>
+  <%= User.find(@product.user_id).pseudo %>
+</p>
+<% if current_user %>
+<%= link_to 'Edit', edit_product_path(@product), class:"_link" %> 
+<%= link_to 'Back', products_path, class:"_link Back_pos" %>
+  <% if current_user.product_ids.include?(params[:id].to_i) == true %>
+      <%= link_to 'Archived',new_archive_path , class:"archive" %>
+  <% end %>
+  <% if current_user.product_ids.include?(params[:id].to_i) != true %>
+      <%= link_to 'Contact', new_message_path, class:"_link" %>
+  <% end %>
+<% end %>
+
+<% if !current_user %>
+<%= link_to 'Back', products_path, class:"_link Back_pos" %>
+<%= link_to 'Contact', new_message_path, class:"_link" %>
+<%end%>
+
+
+
+</div>
+</div>
+</div>
+</div>
