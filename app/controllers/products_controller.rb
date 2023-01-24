@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show edit update destroy ]
   skip_before_action :onlySingnIn, only: [:index, :show]
+  #before_action :thumbempty
   # GET /products or /products.json
   def index
    
@@ -77,4 +78,14 @@ class ProductsController < ApplicationController
     def product_params
       params.require(:product).permit(:price, :description, images: [])
     end
+
+    
+    def thumbempty
+      #@products = Product.all
+      #@products.each do |product|
+      #  @product = Product.where(product.images.attached? == false) 
+      #  @product.destroy
+      #end
+    end
+
 end

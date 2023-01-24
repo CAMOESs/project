@@ -17,9 +17,9 @@
     <%= form.number_field :price %>
   </div>
 
-  <div class="field">
-    <%= form.label :images %><em>(you can choose many)</em><br/>
-    <%= form.file_field :images, multiple: true %>
+  <div class="field prod">
+    <%= form.label :images, class: " img" %><em>(you can choose many)</em><br/>
+    <%= form.file_field :images, multiple: true, id: "image" %>
   </div>
 
   <div class="field">

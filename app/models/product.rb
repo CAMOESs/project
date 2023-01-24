@@ -2,7 +2,7 @@ class Product < ApplicationRecord
     has_many_attached :images
     validates :description, presence: true
     validates :price, presence: true
-    validates :images, presence: true
+    validates :images, presence: false
     validate :image_type
     belongs_to :user
     has_many :archive, dependent: :destroy

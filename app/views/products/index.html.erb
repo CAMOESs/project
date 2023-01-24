@@ -1,11 +1,12 @@
-<div class="user_index container">
+<div class="_user_index container">
 <h1 class="reg_title ">All listing</h1>
   <div class=" site _site">
   <% if @products.count != 0  %>
     <% @products.each do |product| %>
+      <% if product.images.attached?  %>
       <div class="user_main ">
           <div class="user_card dispo">
-
+          
 
             <div class="_product">
               <% (0...product.images.count).each do |i|  %>
@@ -37,6 +38,7 @@
             </div>
           </div>
       </div>
+      <% end %>
     <% end %>
 </div>
 <% else%>

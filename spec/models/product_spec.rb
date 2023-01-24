@@ -18,14 +18,18 @@ RSpec.describe Product, type: :model do
       user.save
       user_id = user.id
       #byebug
+      visit "http://localhost:3000/products/new"
       product = Product.new()
       product.description = "batiment"
       product.price = 1235
       product.id = 3
-      #product.admin = nil
+      product.user_id = user_id
+      product.images = File.new("#{Rails.root}/public/apple-touch-icon.png")
+      expect(product.valid?).to be true
+      
       productImg = ActiveStorage::Blob.new()
       
-      productImg.filename = File.new("#{Rails.root}/public/apple-touch-icon.png")
+      productImg.filename = "/public/apple-touch-icon.png"
       productImg.byte_size = 62583
       productImg.checksum = "kF8O2WjJCbgSa+dMc9y7Ug=="
       productImg.save
@@ -33,15 +37,9 @@ RSpec.describe Product, type: :model do
       active.name = "images"
       active.record_type = "Product"
       active.blob_id = productImg.id
-      active.record_id = product.id
-      #active.save
-      
-      #Images = File.new("#{Rails.root}/public/apple-touch-icon.png")
-      product.user_id = user_id
-      #byebug
-      product.validate
-      expect(product.valid?).to be false
-      expect(product.images.record.errors.messages).to include :images
+      active.record_id = 3
+      active.save
+      product.images.attach()
     end
 
     it "price can't be blank" do
@@ -71,23 +69,19 @@ RSpec.describe Product, type: :model do
       active.record_id = product.id
       #active.save
       
-      #Images = File.new("#{Rails.root}/public/apple-touch-icon.png")
       product.user_id = user_id
       #byebug
       product.validate
       expect(product.valid?).to be false
       expect(product.errors.messages).to include :price
-      expect(product.images.record.errors.messages).to include :images
     end
     it "description can't be blank" do
       user = User.new()
       user.email = "hype@hype.com"
       user.pseudo = "bob"
-      #user.admin = nil
       user.password = "babayaga"
       user.save
       user_id = user.id
-      #byebug
       product = Product.new()
       product.description = ""
       product.price = 1223
@@ -104,15 +98,14 @@ RSpec.describe Product, type: :model do
       active.record_type = "Product"
       active.blob_id = productImg.id
       active.record_id = product.id
-      #active.save
+      active.save
       
-      #Images = File.new("#{Rails.root}/public/apple-touch-icon.png")
+      Images = File.new("#{Rails.root}/public/apple-touch-icon.png")
       product.user_id = user_id
       #byebug
       product.validate
       expect(product.valid?).to be false
       expect(product.errors.messages).to include :description
-      expect(product.images.record.errors.messages).to include :images
     end
   end
 end

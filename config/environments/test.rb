@@ -44,6 +44,10 @@ Rails.application.configure do
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
 
+  config.active_storage.service = :test
+  config.active_storage.replace_on_assign_to_many = false
+  Capybara.ignore_hidden_elements = false
+
   #mailer
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
