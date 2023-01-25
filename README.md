@@ -22,20 +22,14 @@ Things you may want to cover:
   $ rails db:create && rails db:migrate
   
   $ rails s
+  
+* install maildev to track the receipt of mail
+
+   . npm install -g maildev # use sudo if needed
+   
+   . maildev
  
-* System dependencies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
 
 * ...
 # Project
