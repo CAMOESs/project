@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 ._user_index {
     background: linear-gradient(45deg, rgb(177, 174, 174), rgb(255, 255, 255));
-    //height: 100%;
+    height: 300%;
 
   }
 body{
@@ -142,4 +142,15 @@ body{
 }
 .admin{
     display: flex;
+}
+.danger1{
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border:1px solid #e62727;
+    color: #d11616;
+    margin-top: 25px;
+    cursor: pointer;
+    
 }

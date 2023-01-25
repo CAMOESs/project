@@ -1,10 +1,10 @@
 
 <% if current_user %>
     
-    <div class="_user_index  site">
+    <div class="_user_index site">
         
         
-        <nav class="user_side">
+        <nav class="user_side ">
             <%= link_to "All listing",products_path, class:" side_link"%>
             
             <% if @nbrAR != 0 %>
@@ -33,9 +33,11 @@
                             <strong>Description:</strong>
                             <%= Product.find(@all2)[product].description %>
                         </p>
-                            
                         <%= link_to "show", product_path(Product.find(@all2)[product].id), class:"messages show" %>
                         <%= link_to 'Destroy', product_path(Product.find(@all2)[product].id), method: :delete, data: { confirm: 'Are you sure?' } , class:"danger"%>
+                        <% if Product.find(@all2)[product].images.attached? == false  %>
+                            <%= link_to "Product not listed", edit_product_path(Product.find(@all2)[product].id), class: "danger1", title: "please upload some or an image from the edit section" %>
+                        <% end %>
                         </div>
                     </a>
                 <% end %>

@@ -7,13 +7,13 @@
 
 
       <div class="field">
-        <%= f.label :pseudo, class:"label" %><br />
-        <%= f.text_field :pseudo%>
+        <%= f.label :Name, class:"label" %><br />
+        <%= f.text_field :pseudo, autofocus: true%>
       </div>
 
       <div class="field">  
         <%= f.label :email, class:"label" %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        <%= f.email_field :email, autocomplete: "email" %>
       </div>
 
 

@@ -1,13 +1,20 @@
-<%= params[:description] %>
-<%= params[:description] %>
+
 <div class="user_index container site _site">
 <div class="user_main">
 <div class="user_card dispo">
 <div class="_product2">
-<% (0...@product.images.count).each do |product|  %>
-  <div class="img_product">
-      <%= link_to image_tag(@product.banner(product)),@product.images[product]  %>
-  </div>
+<% if @product.images.attached?  %>
+  <% (0...@product.images.count).each do |product|  %>
+    
+    <div class="img_product">
+        <%= link_to image_tag(@product.banner(product)),@product.images[product]  %>
+    </div>
+
+  <% end %>
+<% else %>
+
+  <img src="https://placehold.jp/30/dd6699/ffffff/300x150.png?text=Please+upload+some+or+an+image(s)+or+this+product+will+not+be+visible+in+the+listing">
+
 <% end %>
 </div>
 <div class="dispo2">
@@ -39,7 +46,6 @@
 <%= link_to 'Back', products_path, class:"_link Back_pos" %>
 <%= link_to 'Contact', new_message_path, class:"_link" %>
 <%end%>
-
 
 
 </div>
