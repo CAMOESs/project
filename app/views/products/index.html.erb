@@ -1,7 +1,8 @@
 <div class="_user_index container">
 <h1 class="reg_title ">All listing</h1>
-  <div class=" site _site">
+<div class=" site _site">
   <% if @products.count != 0  %>
+  <% nbr = @products.count  %>
     <% @products.each do |product| %>
       <% if product.images.attached?  %>
       <div class="user_main ">
@@ -38,8 +39,17 @@
             </div>
           </div>
       </div>
+      <% else%>
+      
+        <div class="absence"><% nbr = nbr-1 %></div>
       <% end %>
-    <% end %>
+      <% if nbr == 0 && !current_user%>
+        <div class="absence"> No listing <%= link_to 'Back', '/', class:"_link Back_pos" %></div>
+        <% elsif nbr == 0%>
+        <div class="absence"> No listing </div>
+      <% end %>
+      
+  <% end %>
 </div>
 <% else%>
 <div class="absence">No listing</div>
