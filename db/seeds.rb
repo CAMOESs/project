@@ -5,27 +5,27 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-5.times do |j|
-    user = User.new
-    user.email = "gye#{j+1}@gmail.com"
-    user.pseudo = "user#{j+1}"
-    user.admin = nil
+
+ user = User.new
+    user.email = "ro@gmail.com"
+    user.pseudo = "pop smok"
+    #user.admin = true
     user.password = "babayaga"
     user.save!
-    
- end
 
- 5.times do |j|
-    product = Product.new
-    product.price = 1000 + j
-    product.description = "description#{j+1}"
-    product.user_id = User.find(j+1).id
-    product.save
- end
- 5.times do |j|
-    message = Message.new
-    message.email = "visit#{j+1}@gmail.com"
-    message.messages = "messages#{j+1}"
-    message.user_id = User.find(j+1).id
-    message.save
- end
+    
+
+# 4.times do |j|
+#    product = Product.new
+#    product.price = 1000 + j
+#    product.description = "description#{j+1}"
+#    product.user_id = User.find(j+1).id
+#    product.save
+# end
+# 4.times do |j|
+ #   message = Message.new
+ #   message.email = "visit#{j+1}@gmail.com"
+ #   message.messages = "messages#{j+1}"
+ #   message.user_id = User.find(j+1).id
+ #   message.save
+ #end

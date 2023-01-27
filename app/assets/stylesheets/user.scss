@@ -169,3 +169,46 @@
     display:inline-block;
     margin-top:40px;
 }
+._user_nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    height: 60px;
+    font-size: 1.2em;
+    background-color: rgb(9, 7, 107);
+    
+    width: 100%;
+}
+.__link{
+    color: rgb(233, 215, 215);
+    padding: 5px 10px;
+    font-size: 12px;
+    &:hover{
+        //border: 1px solid white;
+        //border-radius: 4px;
+        //background-color: white;
+        color: rgb(32, 228, 211);
+        transition: color 0.5s;
+    }
+}
+
+.disabled{
+    color: rgb(161, 159, 159);
+    padding: 5px 10px;
+    font-size: 12px;
+}
+.dis{
+    cursor: not-allowed;
+}
+.linked{
+    color: rgb(233, 215, 215);
+    padding: 5px 10px;
+    font-size: 20px;
+    &:hover{
+        //border: 1px solid white;
+        //border-radius: 4px;
+        //background-color: white;
+        color: rgb(32, 228, 211);
+        transition: color 0.5s;
+    }
+}

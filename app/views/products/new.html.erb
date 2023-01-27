@@ -1,3 +1,4 @@
+
 <section class="reg_session">
   <div class="reg_img"></div>
   <div class="reg_box">
@@ -19,7 +20,7 @@
 
   <div class="field">
     <%= form.label :price %><br/>
-    <%= form.number_field :price %>
+    <%= form.number_field :price,  placeholder: "price" %>
   </div>
 
   <div class="field prod">
@@ -29,7 +30,7 @@
 
   <div class="field">
     <%= form.label :description, class:"field" %><br/>
-    <%= form.text_area :description, class:"field area" %>
+    <%= form.text_area :description, class:"field area", placeholder: "description" %>
   </div>
 
   <div class="actions">

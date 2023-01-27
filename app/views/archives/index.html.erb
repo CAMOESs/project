@@ -1,5 +1,11 @@
 
 <div class="_user_index container">
+<% if flash[:notice] %>
+    <div class="notice"><%= notice %></div>
+  <% end %>
+  <% if flash[:alert] %>
+    <div class="alert"><%= alert %></div>  
+  <% end %>
 <h1 class="reg_title ">Archive</h1>
   <div class=" site _site">
   <% if @archives.count != 0 %>

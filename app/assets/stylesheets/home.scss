@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 ._user_index {
     background: linear-gradient(45deg, rgb(177, 174, 174), rgb(255, 255, 255));
-    height: 300%;
+    height: 100%;
 
   }
 body{
@@ -153,4 +153,33 @@ body{
     margin-top: 25px;
     cursor: pointer;
     
+}
+
+.boddy{
+    display: flex;
+    flex-direction: column;
+}
+._contenu{
+    flex: 1 0 auto;
+}
+
+footer{
+    flex-shrink: 0;
+    //border-top: 1px dashed #000;
+    width: 100%;
+    //background:rgb(22, 184, 95);
+    //height: 100%;
+}
+.contenu-footer{
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 20px;
+    padding: 50px 0 100px;
+}
+.ordre{
+    display: flex;
+    flex-direction: column;
 }
