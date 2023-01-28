@@ -1,7 +1,7 @@
 
 <section class="message">
 <div class="messages">
-  <h1 class="message_title">Message preview</h1>
+  <h1 class="message_title">Aperçu du message</h1>
   <p>
     <strong>Email:</strong>
     <%= @message.email %>
@@ -12,7 +12,7 @@
     <%= @message.messages %>
   </p>
 
-  <%= link_to 'Edit', edit_message_path(@message), class:"msg" %> |
-  <%= link_to 'Back', '/', class:"msg" %>
+  <%= link_to 'Editer', edit_message_path(@message), class:"msg" %> |
+  <%= link_to 'Retout', '/', class:"msg" %>
 </div>
 </section>
