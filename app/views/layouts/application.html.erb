@@ -14,8 +14,8 @@
   <% if current_user %>
     <nav class="user_nav">
             <div class="user_link">
-                <%= link_to "Listing", '/' ,class:"listing link"%>
-                <%= link_to "New product",new_product_path , class:"product link"%>
+                <%= link_to "Vos produits", '/' ,class:"listing link"%>
+                <%= link_to "Nouveau produit",new_product_path , class:"product link"%>
                 <%= link_to "Messages",messages_path, class:"messages link"%>
             </div>
 
@@ -29,7 +29,7 @@
             </div>
             
             <div class="user_logout">
-                <%= link_to "Logout",destroy_user_session_path ,method: :delete , class:"logout link"%>
+                <%= link_to "Se déconnecter",destroy_user_session_path ,method: :delete , class:"logout link"%>
             </div>
             </div>
             
@@ -38,16 +38,16 @@
    
   <% end %>
   <% if !current_user %>
-  <% if flash[:notice] %>
-    <div class="notice"><%= notice %></div>
-  <% end %>
-  <% if flash[:alert] %>
-    <div class="alert"><%= alert %></div>  
-  <% end %>
+    <% if flash[:notice] %>
+      <div class="notice"><%= notice %></div>
+    <% end %>
+    <% if flash[:alert] %>
+      <div class="alert"><%= alert %></div>  
+    <% end %>
   <% end %>
 
     <%= yield %>
-    </div>
+    
     <% if current_user %>
     
 
@@ -57,7 +57,7 @@
       
         <div class="blo footer-services">
             <%= link_to "@myapart",'/' , class:"linked"%>
-            <a href="#top" class="__link">Back to top</a>
+            <a href="#top" class="__link">Retour en haut</a>
             <% if  Archive.all.where(archive: true).count != 0 %>
               <%= link_to "Archive",archives_path , class:"product __link"%>
             <% else %>
@@ -69,8 +69,8 @@
 
         <div class="blo footer-services">
 
-            <%= link_to "All linsting",products_path, class:" __link"%>
-            <%= link_to "setting",home_private_path , class:" __link"%>
+            <%= link_to "Tous les produits",products_path, class:" __link"%>
+            <%= link_to "Paramètre",home_private_path , class:" __link"%>
             <% if  current_user.messages.count != 0 %>
               <%= link_to "Messages",messages_path, class:" __link"%>
             <% else %>
@@ -85,6 +85,7 @@
 
 
   <% end %>
+  </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
     <script>
       var tl = gsap.timeline({defaults: {duration: 1.8, opacity: 3}});

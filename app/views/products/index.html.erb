@@ -1,5 +1,5 @@
 <div class="_user_index container">
-<h1 class="reg_title ">All listing</h1>
+<h1 class="reg_title ">Tout les produits</h1>
 <div class=" site _site">
   <% if @products.count != 0  %>
   <% nbr = @products.count  %>
@@ -18,7 +18,7 @@
             </div>
             <div class="dispo2">
               <p>
-                <strong>Price:</strong>
+                <strong>Prix:</strong>
                 <%= product.price %> $
               </p>
 
@@ -27,14 +27,14 @@
                 <%= product.description %>
               </p>
               <p>
-                <strong>Owner:</strong>
+                <strong>Propriétaire:</strong>
                 <%= User.find(product.user_id).pseudo %>
               </p>
                   <% if current_user %>
-                  <%= link_to 'Edit', edit_product_path(product.id), class:"_link" %> 
+                  <%= link_to 'Editer', edit_product_path(product.id), class:"_link" %> 
                   <% end %>
-                  <%= link_to 'Back', '/', class:"_link Back_pos" %>
-                      <td><%= link_to 'Show', product_path(product.id), class:"_link" %></td>
+                  <%= link_to 'Retour', '/', class:"_link Back_pos" %>
+                      <td><%= link_to 'Afficher', product_path(product.id), class:"_link" %></td>
                   
             </div>
           </div>
@@ -52,7 +52,7 @@
   <% end %>
 </div>
 <% else%>
-<div class="absence">No listing</div>
+<div class="absence">Pas de produit listé</div>
 <% end %>
 </div>
 

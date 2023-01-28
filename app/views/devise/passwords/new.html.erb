@@ -1,7 +1,7 @@
 <section class="reg_session">
   <div class="reg_img"></div>
   <div class="reg_box">
-    <h2 class="reg_title">Forgot your password?</h2>
+    <h2 class="reg_title">Mot de passe oublié?</h2>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -12,7 +12,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
+    <%= f.submit "Envoyez-moi les instructions de réinitialisation du mot de passe" %>
   </div>
 <% end %>
 

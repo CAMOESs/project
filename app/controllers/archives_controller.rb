@@ -25,12 +25,12 @@ class ArchivesController < ApplicationController
                 @archive.update(archive_params)
                 #@archive.save
                 session.delete('product_id')
-                redirect_to archives_path, notice: "archived product"
+                redirect_to archives_path, notice: "produit archivé"
             else
                 @archive.archive = true
                 @archive.save
                 session.delete('product_id')
-                redirect_to archives_path, notice: "archived product"
+                redirect_to archives_path, notice: "produit archivé"
             end
     end
 
@@ -40,7 +40,7 @@ class ArchivesController < ApplicationController
         @archive = Archive.find(params[:id])
         #@archive.product_id = session[:product_id]
         if @archive.update(archive_params)
-            redirect_to  archives_path, notice: "unarchived product"
+            redirect_to  archives_path, notice: "produit désarchivé"
         else
             render :edit
         end

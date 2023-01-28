@@ -1,18 +1,24 @@
 
 <% if current_user %>
+<% if flash[:notice] %>
+<div class="notice"><%= notice %></div>
+<% end %>
+<% if flash[:alert] %>
+<div class="alert"><%= alert %></div>  
+<% end %>
     
     <div class="_user_index site">
         
         
         <nav class="user_side ">
-            <%= link_to "All listing",products_path, class:" side_link"%>
+            <%= link_to "Tout les produits",products_path, class:" side_link"%>
             
             <% if @nbrAR != 0 %>
 
                 <%= link_to "Archive", archives_path, class:" side_link"%>
 
             <% end %>
-            <%= link_to "setting",home_private_path, class:"profile side_link"%>
+            <%= link_to "Paramètre",home_private_path, class:"profile side_link"%>
         </nav>
         <main class="user_main">
 
@@ -25,7 +31,7 @@
                     
                     <div class="user_card">
                         <p class="">
-                            <strong>Price:</strong>
+                            <strong>Prix:</strong>
                             <%= Product.find(@all2)[product].price %> $
                         </p>
 
@@ -33,17 +39,17 @@
                             <strong>Description:</strong>
                             <%= Product.find(@all2)[product].description %>
                         </p>
-                        <%= link_to "show", product_path(Product.find(@all2)[product].id), class:"messages show" %>
-                        <%= link_to 'Destroy', product_path(Product.find(@all2)[product].id), method: :delete, data: { confirm: 'Are you sure?' } , class:"danger"%>
+                        <%= link_to "afficher", product_path(Product.find(@all2)[product].id), class:"messages show" %>
+                        <%= link_to 'supprimer', product_path(Product.find(@all2)[product].id), method: :delete, data: { confirm: 'Are you sure?' } , class:"danger"%>
                         <% if Product.find(@all2)[product].images.attached? == false  %>
-                            <%= link_to "Product not listed", edit_product_path(Product.find(@all2)[product].id), class: "danger1", title: "please upload some or an image from the edit section" %>
+                            <%= link_to "Produit non listé", edit_product_path(Product.find(@all2)[product].id), class: "danger1", title: "please upload some or an image from the edit section" %>
                         <% end %>
                         </div>
                     </a>
                 <% end %>
             <% else %>
                 <div class="absence">
-                No publication
+                Pas publication
                 </div>
             <% end %>
 
@@ -51,7 +57,7 @@
         <aside class="user_aside">
             <div class="_user_infos">
                 <p class="user_info">
-                    <strong>Name:</strong>
+                    <strong>Nom:</strong>
                     <%= @user.pseudo %>
                 </p>
             
@@ -61,7 +67,7 @@
                 </p>
 
                 <p class="user_info">
-                    <strong>Message received:</strong> 
+                    <strong>Message recu:</strong> 
                     <% if @user.messages.count == 0 %>
                         pas de message
                     <%else %>
@@ -84,18 +90,18 @@
     <div class="home_intro">
         <div></div>
         <div class="home_text">
-            <h1>Welcome to my apart </h1>
-            <p>the site which offers you samples of 
-            contribution<br/>  defying all competition and at a lower cost you can  <br/>
-            now visit the list of  available or create an account<br/> and offer your 
-            services. Visit 
+        <h1>Bienvenue dans mon appart </h1>
+        <p>le site qui vous propose des échantillons de
+        construction<br/> défiant toute concurrence et à moindre coût vous pouvez <br/>
+        visitez maintenant la liste des disponibles ou créez un compte<br/> et offrez votre
+        prestations de service. Visite
             <%= link_to 'Linsting', products_path, class:"_link plus" %>
             </p>
         </div>
     </div>
     <div class="home_sign">
-        <%= link_to "Sign in", new_user_session_path ,class:"home_link sign_in"%>
-        <%= link_to "Sign up", new_user_registration_path ,class:"home_link"%>
+        <%= link_to "Connexion", new_user_session_path ,class:"home_link sign_in"%>
+        <%= link_to "S'inscrire", new_user_registration_path ,class:"home_link"%>
     </div>
     </div>
 

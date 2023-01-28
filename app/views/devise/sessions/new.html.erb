@@ -1,7 +1,7 @@
 <section class="reg_session">
   <div class="reg_img"></div>
   <div class="reg_box">
-    <h2 class="reg_title">Log in</h2>
+    <h2 class="reg_title">CONNEXION</h2>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
@@ -12,18 +12,18 @@
 
       <div class="field">
         <%= f.label :password, class:"label" %><br />
-        <%= f.password_field :password, autocomplete: "current-password", placeholder: "password" %>
+        <%= f.password_field :password, autocomplete: "current-password", placeholder: "mot de passe" %>
       </div>
 
       <% if devise_mapping.rememberable? %>
         <div class:"sess_label">
           <%= f.check_box :remember_me, class:"check" %>
-          <%= f.label :remember_me, class:" sess_label" %>
+          <%= f.label :se_souvenir_de_moi, class:" sess_label" %>
         </div>
       <% end %>
 
       <div class="actions">
-        <%= f.submit "Log in", id: "login" %>
+        <%= f.submit "connexion", id: "login" %>
       </div>
     <% end %>
     <%= link_to "home", "/",class:"_link"%>

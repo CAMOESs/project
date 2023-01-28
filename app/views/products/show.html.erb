@@ -30,7 +30,7 @@
 </div>
 <div class="dispo2">
 <p>
-  <strong>Price:</strong>
+  <strong>prix:</strong>
   <%= @product.price %> $
 </p>
 
@@ -39,18 +39,18 @@
   <%= @product.description %>
 </p>
 <p>
-  <strong>Owner:</strong>
+  <strong>Propriétaire:</strong>
   <%= User.find(@product.user_id).pseudo %>
 </p>
 <% if current_user %>
-<%= link_to 'Edit', edit_product_path(@product), class:"_link" %> 
-<%= link_to 'Back', products_path, class:"_link Back_pos" %>
+<%= link_to 'Editer', edit_product_path(@product), class:"_link" %> 
+<%= link_to 'Retour', products_path, class:"_link Back_pos" %>
 <% if @product.images.attached?  %>
   <% if current_user.product_ids.include?(params[:id].to_i) == true %>
-      <%= link_to 'Archived',new_archive_path , class:"archive" %>
+      <%= link_to 'Archivés',new_archive_path , class:"archive" %>
   <% end %>
 <% else %>
-  <%= link_to "Product not listed", edit_product_path(@product.id), class: "danger1", title: "please upload some or an image from the edit section" %>
+  <%= link_to "Produit non listé", edit_product_path(@product.id), class: "danger1", title: "please upload some or an image from the edit section" %>
 <% end %>
   <% if current_user.product_ids.include?(params[:id].to_i) != true %>
       <%= link_to 'Contact', new_message_path, class:"_link" %>

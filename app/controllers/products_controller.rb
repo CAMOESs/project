@@ -32,7 +32,7 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to product_url(@product), notice: "Product was successfully created." }
+        format.html { redirect_to product_url(@product), notice: "Le produit a été créé avec succès." }
         format.json { render :show, status: :created, location: @product }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -46,7 +46,7 @@ class ProductsController < ApplicationController
     if current_user.products.ids.include?(params[:id].to_i) 
       respond_to do |format|
         if @product.update(product_params)
-          format.html { redirect_to product_url(@product), notice: "Product was successfully updated." }
+          format.html { redirect_to product_url(@product), notice: "Le produit a été mis à jour avec succès." }
           format.json { render :show, status: :ok, location: @product }
         else
           format.html { render :edit, status: :unprocessable_entity }
@@ -54,7 +54,7 @@ class ProductsController < ApplicationController
         end
       end
     else
-      redirect_to products_path, alert: "Permission denied."
+      redirect_to products_path, alert: "Permission refusée."
     end
   end
 
@@ -63,7 +63,7 @@ class ProductsController < ApplicationController
     @product.destroy
 
     respond_to do |format|
-      format.html { redirect_to root_url, notice: "Product was successfully destroyed." }
+      format.html { redirect_to root_url, notice: "Le produit a été détruit avec succès." }
       format.json { head :no_content }
     end
   end

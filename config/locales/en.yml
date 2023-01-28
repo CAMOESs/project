@@ -31,3 +31,12 @@
 
 en:
   hello: "Hello world"
+  sevices_html: " <h1>Welcome to my apart </h1>
+            <p>the site which offers you samples of 
+            contribution<br/>  defying all competition and at a lower cost you can  <br/>
+            now visit the list of  available or create an account<br/> and offer your 
+            services. Visit "
+
+  link:
+    sign_in: "Sign in" 
+    sign_up: "Sign up"
