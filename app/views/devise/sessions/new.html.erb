@@ -4,7 +4,7 @@
     <h2 class="reg_title">CONNEXION</h2>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-
+      <div class="form" id="form">
       <div class="field">
         <%= f.label :email, class:"label" %><br />
         <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email" %>
@@ -24,6 +24,7 @@
 
       <div class="actions">
         <%= f.submit "connexion", id: "login" %>
+      </div>
       </div>
     <% end %>
 

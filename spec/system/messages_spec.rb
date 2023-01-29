@@ -16,11 +16,11 @@ RSpec.describe "Messages", type: :system do
       user.save
       confirmation = User.first.confirmation_token
       visit "http://localhost:3000/users/confirmation?confirmation_token=" + confirmation
-      within('form') do
+      within('.form') do
         fill_in "Email", with: "hype@hype.com"
         fill_in "Password", with: "123456"
       end
-      click_button "Log in"
+      click_button "connexion"
    
     end
 
@@ -58,8 +58,8 @@ RSpec.describe "Messages", type: :system do
       message.user_id = user.id
       message.save
       visit "http://localhost:3000/messages/#{message.id.to_s }/edit"
-      click_button "Update Message"
-      expect(page).to have_content("Message was successfully updated.")
+      click_button "Envoyez"
+      expect(page).to have_content("Aperçu du message")
     end
 
 

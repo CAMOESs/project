@@ -28,6 +28,26 @@
     user.save!
 
     
+    user = User.new
+    user.email = "bob@bi.com"
+    user.pseudo = "bob yan"
+    #user.admin = true
+    user.password = 123456
+    user.save!
+
+    user = User.new
+    user.email = "boby@gmail.com"
+    user.pseudo = "boby lo"
+    #user.admin = true
+    user.password = 123456
+    user.save!
+
+    user = User.new
+    user.email = "bryan@io.com"
+    user.pseudo = "bryan ocon"
+    #user.admin = true
+    user.password = 123456
+    user.save!
 
 # 4.times do |j|
 #    product = Product.new

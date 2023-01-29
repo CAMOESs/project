@@ -16,11 +16,11 @@ RSpec.describe "Archives", type: :system do
       user.save
       confirmation = User.first.confirmation_token
       visit "http://localhost:3000/users/confirmation?confirmation_token=" + confirmation
-      within('form') do
+      within('.form') do
         fill_in "Email", with: "hype@hype.com"
         fill_in "Password", with: "123456"
       end
-      click_button "Log in"
+      click_button "connexion"
    
     end
 
@@ -32,7 +32,7 @@ RSpec.describe "Archives", type: :system do
     it "new Archived " do
       visit "http://localhost:3000/archives/new"
       click_button "Archived"
-      expect(page).to have_content("archived product")
+      expect(page).to have_content("produit archivé")
     end
 
     it " unArchived " do

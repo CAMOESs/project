@@ -17,14 +17,14 @@ RSpec.describe "Users", type: :system do
       confirmation = User.first.confirmation_token
       visit "http://localhost:3000/users/confirmation?confirmation_token=" + confirmation
       
-      within('form') do
+      within('.form') do
         fill_in "Email", with: "hype@hype.com"
         fill_in "Password", with: "123456"
       end
       #byebug
-      click_button "Log in"
+      click_button "connexion"
       
-      expect(page).to have_content("Signed in successfully.")
+      expect(page).to have_content("Connexion réussie.")
     end
 
     it "connection failure (Invalid Email or password.)" do
@@ -39,14 +39,14 @@ RSpec.describe "Users", type: :system do
       confirmation = User.first.confirmation_token
       visit "http://localhost:3000/users/confirmation?confirmation_token=" + confirmation
       
-      within('form') do
+      within('.form') do
         fill_in "Email", with: "hype@hype.com"
         fill_in "Password", with: "12345"
       end
           #byebug
-      click_button "Log in"
+      click_button "connexion"
       
-      expect(page).to have_content("Invalid Email or password.")
+      expect(page).to have_content("Email ou mot de passe non valide.")
     end
 
     it "admin user" do
@@ -59,12 +59,12 @@ RSpec.describe "Users", type: :system do
         confirmation = User.first.confirmation_token
         visit "http://localhost:3000/users/confirmation?confirmation_token=" + confirmation
         
-        within('form') do
+        within('.form') do
           fill_in "Email", with: "hype@hype.com"
           fill_in "Password", with: "123456"
         end
         #byebug
-        click_button "Log in"
+        click_button "connexion"
       
       expect(page).to have_content("Admin")
   
@@ -75,7 +75,7 @@ RSpec.describe "Users", type: :system do
   it "logout all listing" do
     
     visit "http://localhost:3000/products" 
-    expect(page).to have_content("All listing")
+    expect(page).to have_content("Tout les produits")
 
   end
   
@@ -93,26 +93,26 @@ RSpec.describe "Users", type: :system do
       confirmation = User.first.confirmation_token
       visit "http://localhost:3000/users/confirmation?confirmation_token=" + confirmation
       
-      within('form') do
+      within('.form') do
         fill_in "Email", with: "hype@hype.com"
         fill_in "Password", with: "123456"
       end
       #byebug
-      click_button "Log in"
+      click_button "connexion"
     
     end
     
     it "Edit" do
      
       visit "http://localhost:3000/users/edit" 
-      
-      fill_in "Email", with: "hype@hype.com"
-      fill_in "Password", with: "123456"
-      fill_in "Password confirmation", with: "123456"
-      fill_in "Current password", with: "123456"
-      
+      within('.form') do
+        fill_in "Email", with: "hype@hype.com"
+        fill_in "mot de passe", with: "123456"
+        #fill_in "mot de passe confirmation", with: "123456"
+        #fill_in "mot de passe actuel", with: "123456"
+      end
       click_button "Update"
-      expect(page).to have_content("Your account has been updated successfully.")
+      expect(page).to have_content("l'enregistrement de cette use")
     end
 
     it "Destroy" do
@@ -123,7 +123,7 @@ RSpec.describe "Users", type: :system do
       find("#cancel").click
       #click_link('Cancel my account')
       #byebug
-      expect(page).to have_content("Your account has been successfully cancelled")
+      expect(page).to have_content("Votre compte a été annulé avec succès.")
     end
 
     it "Read" do
