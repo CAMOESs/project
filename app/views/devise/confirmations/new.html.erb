@@ -15,7 +15,22 @@
     <%= f.submit "Renvoyer les instructions de confirmation" %>
   </div>
 <% end %>
-
+<div class="">
+  <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", value: "guest@general.com", placeholder: "email", class: "shadow" %>
+    <div class="actions">
+      <%= f.submit "confirmation guest generale", class: "long" %>
+    </div>
+  <% end %>
+  <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", value: "guest@admin.com", placeholder: "email", class: "shadow" %>
+  <div class="actions">
+    <%= f.submit "confirmation guest admin" %>
+  </div>
+<% end %>
+</div>
 <%= render "devise/shared/links" %>
 </div>
 </section>

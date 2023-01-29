@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
   before_action :set_message, only: %i[ show edit update destroy ]
-  skip_before_action :onlySingnIn
+  
 
   # GET /messages or /messages.json
   def index

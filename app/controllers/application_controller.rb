@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
     before_action :onlySingnIn
     before_action :nbr
     
+    
     add_flash_types :success, :danger
     skip_before_action :onlySingnIn, if: :devise_controller?
     def configure_devise_parameters
@@ -15,14 +16,16 @@ class ApplicationController < ActionController::Base
     
 
     def onlySingnIn
-        if !userSingnIn
-            redirect_to '/', alert: "Please login"
+        if !userSingnIn 
+            redirect_to '/', alert: "s'il vous plait connecté vous"
         end 
+        #session.destroy(:top)
     end
 
     def userSingnIn
         !current_user.nil?
     end
+
     def nbr
         @product = [] #indesirable
         @archive = Archive.all.where(archive: true)

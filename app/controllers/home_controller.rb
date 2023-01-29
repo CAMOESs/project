@@ -1,6 +1,5 @@
 class HomeController < ApplicationController
   skip_before_action :onlySingnIn, only: [:index]
-
   def index
     @user = current_user
     @nbrAR = 0

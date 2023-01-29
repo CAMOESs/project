@@ -5,6 +5,14 @@ RailsAdmin.config do |config|
   config.authorize_with do
     redirect_to main_app.root_path unless warden.user.admin = true
   end
+
+  config.authorize_with do 
+    if current_user.nil?
+      redirect_to '/', flash: {error: 'Please Login to Continue..'}
+    elsif !current_user.admin?
+      redirect_to '/', flash: {alert: 'Vous êtes pas admin'}
+    end
+  end
   ## == Devise ==
   # config.authenticate_with do
   #   warden.authenticate! scope: :user
@@ -40,5 +48,8 @@ RailsAdmin.config do |config|
     ## With an audit adapter, you can add:
     # history_index
     # history_show
+
+    
+
   end
 end
