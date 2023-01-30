@@ -19,7 +19,7 @@ RSpec.describe "Users", type: :system do
       
       within('.form') do
         fill_in "Email", with: "hype@hype.com"
-        fill_in "Password", with: "123456"
+        fill_in "mot de passe", with: "123456"
       end
       #byebug
       click_button "connexion"
@@ -41,7 +41,7 @@ RSpec.describe "Users", type: :system do
       
       within('.form') do
         fill_in "Email", with: "hype@hype.com"
-        fill_in "Password", with: "12345"
+        fill_in "mot de passe", with: "12345"
       end
           #byebug
       click_button "connexion"
@@ -61,7 +61,7 @@ RSpec.describe "Users", type: :system do
         
         within('.form') do
           fill_in "Email", with: "hype@hype.com"
-          fill_in "Password", with: "123456"
+          fill_in "mot de passe", with: "123456"
         end
         #byebug
         click_button "connexion"
@@ -95,7 +95,7 @@ RSpec.describe "Users", type: :system do
       
       within('.form') do
         fill_in "Email", with: "hype@hype.com"
-        fill_in "Password", with: "123456"
+        fill_in "mot de passe", with: "123456"
       end
       #byebug
       click_button "connexion"
@@ -111,7 +111,7 @@ RSpec.describe "Users", type: :system do
         #fill_in "mot de passe confirmation", with: "123456"
         #fill_in "mot de passe actuel", with: "123456"
       end
-      click_button "Update"
+      click_button "Mettre à jour"
       expect(page).to have_content("l'enregistrement de cette use")
     end
 

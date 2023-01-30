@@ -18,7 +18,7 @@ RSpec.describe "Messages", type: :system do
       visit "http://localhost:3000/users/confirmation?confirmation_token=" + confirmation
       within('.form') do
         fill_in "Email", with: "hype@hype.com"
-        fill_in "Password", with: "123456"
+        fill_in "mot de passe", with: "123456"
       end
       click_button "connexion"
    
