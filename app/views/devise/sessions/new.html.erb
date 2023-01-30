@@ -11,7 +11,7 @@
       </div>
 
       <div class="field">
-        <%= f.label :password, class:"label" %><br />
+        <%= f.label :mot_de_passe, class:"label" %><br />
         <%= f.password_field :password, autocomplete: "current-password", placeholder: "mot de passe" %>
       </div>
 
@@ -40,10 +40,10 @@
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
             <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email",value: "guest@general.com", class: "shadow" %>
-            <%= f.password_field :password, autocomplete: "current-password", placeholder: "mot de passe", value: 123456, class: "shadow" %>
+            <%= f.password_field :password, autocomplete: "current-password", placeholder: "mot de passe", value: "123456", class: "shadow" %>
 
           <div class="actions">
-            <%= f.submit "guest general user login", id: "login" %>
+            <%= f.submit "invité général", id: "login" %>
           </div>
         <% end %>
       </div>
@@ -51,10 +51,10 @@
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
             <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email",value: "guest@admin.com", class: "shadow" %>
-            <%= f.password_field :password, autocomplete: "current-password", placeholder: "mot de passe", value: 123456, class: "shadow" %>
+            <%= f.password_field :password, autocomplete: "current-password", placeholder: "mot de passe", value: "123456", class: "shadow" %>
 
           <div class="actions">
-            <%= f.submit "guest admin user login", id: "login" %>
+            <%= f.submit "invité administrateur", id: "login" %>
           </div>
         <% end %>
       </div>
