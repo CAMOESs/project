@@ -1,7 +1,7 @@
 <div class="_user_index site _site">
 <div class="user_main">
 
-<div class="aside">
+<div class="_aside">
 <div>
 <% if current_user.messages.count != 0 %>
   <h2 class="reg_title">Messages recu</h2>
@@ -33,54 +33,54 @@
           </div>
       
       <% end %>
-      <% end %>
+  <% else %> 
+  <div class="absence foot">Pas de message recu</div>   
+  <% end %>
   </div>
     
     <div class="msgenv"> 
-    <% if Message.all.where(email: current_user.email).count != 0 %>
-            <h2 class="reg_title">Messages envoyez</h2>
+          <% if Message.all.where(email: current_user.email).count != 0 %>
+                  <h2 class="reg_title">Messages envoyez</h2>
 
-            <% Message.all.where(email: current_user.email).each do |message| %>
-                  <div class="user_card dispo">
+                  <% Message.all.where(email: current_user.email).each do |message| %>
+                        <div class="user_card dispo">
 
-                  <div class="_product2">
+                        <div class="_product2">
 
-                  <div class="dispo2">
-                  <p>
-                    <strong>Email:</strong>
-                    <%= message.email %>
-                  </p>
+                        <div class="dispo2">
+                        <p>
+                          <strong>Email:</strong>
+                          <%= message.email %>
+                        </p>
 
-                  <p>
-                    <strong>Messages:</strong>
-                    <%= message.messages %>
-                  </p>
-                  <p>
-                    <strong>À:</strong>
-                    <%= User.find(message.user_id).email %>
-                  </p>
-                  <p>
-                    <strong>reception date:</strong>
-                    <%= message.created_at %>
-                  </p>
+                        <p>
+                          <strong>Messages:</strong>
+                          <%= message.messages %>
+                        </p>
+                        <p>
+                          <strong>À:</strong>
+                          <%= User.find(message.user_id).email %>
+                        </p>
+                        <p>
+                          <strong>reception date:</strong>
+                          <%= message.created_at %>
+                        </p>
+
+                        </div>
+
+                        </div>
+
+                        </div>
+                  
+                  <% end %>
+                  <div class="_bas">
 
                   </div>
-
-                  </div>
-
-                  </div>
-            
-    <% end %>
-    <div class="_bas">
-
-    </div>
-    
+                  <% else %> 
+                  <div class="absence">Pas de message envoyez</div>
     </div>
   </div>
-  <div class="_bas">
-
-    </div>
-<% elsif current_user.messages.count == 0 || Message.all.where(email: current_user.email).count == 0 %>
-        <div class="absence _bas">Aucun message recu ou envoyez</div>
+  
+  
 <% end %>
 </div>
