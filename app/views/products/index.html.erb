@@ -30,8 +30,10 @@
                 <strong>Propriétaire:</strong>
                 <%= User.find(product.user_id).pseudo %>
               </p>
-                  <% if current_user %>
+                
+                  <% if current_user && current_user.product_ids.include?(product.id)  %>
                   <%= link_to 'Editer', edit_product_path(product.id), class:"_link" %> 
+                  
                   <% end %>
                   <%= link_to 'Retour', '/', class:"_link Back_pos" %>
                       <td><%= link_to 'Afficher', product_path(product.id), class:"_link" %></td>
