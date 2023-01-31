@@ -36,9 +36,9 @@
                 <%= User.find(product.user_id).pseudo %>
               </p>
                   <% if current_user %>
-                  <%= link_to 'Back', '/', class:"_link" %> 
+                  <%= link_to 'Retour', '/', class:"_link" %> 
                   <% end %>
-                  <%= link_to 'Unarchived', edit_archive_path(archive.id), class:"_link Back_pos plus" %>
+                  <%= link_to 'Désarchiver', edit_archive_path(archive.id), class:"_link Back_pos plus" %>
                   
             </div>
           </div>

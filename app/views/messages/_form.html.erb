@@ -13,7 +13,11 @@
 
   <div class="field">
     <%= form.label :email %><br/>
-    <%= form.email_field :email, autofocus: true, autocomplete: "email" %>
+    <% if current_user %>
+      <%= form.email_field :email, autofocus: true, autocomplete: "email", value: current_user.email, disabled: "disabled" %>
+    <% else %>
+      <%= form.email_field :email, autofocus: true, autocomplete: "email" %>
+    <% end %>
   </div>
 
   <div class="field">

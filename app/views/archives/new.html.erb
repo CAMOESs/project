@@ -5,12 +5,12 @@
 <div class="middle">
 <%= form_for @archive do |f| %>
 
-    <%= f.label :"Do you really want to archive this article?",class: "plus warning" %>
+    <%= f.label :"Voulez-vous vraiment archiver cet article ?",class: "plus warning" %>
     </br>
     </br>
     <div class="form-group col-md-8  align-items-center">
-        <button type="submit" class="archive1"><%= f.check_box :archive, checked: true, class: "shadow" %>Archived</button>
-        <%= link_to 'Back',root_path ,class:"_link" %>
+        <button type="submit" class="archive1"><%= f.check_box :archive, checked: true, class: "shadow" %>Archiver</button>
+        <%= link_to 'Retour',root_path ,class:"_link" %>
     </div>
 <% end %>
 </div>
