@@ -2,11 +2,16 @@
 <%= form_with(model: product, local: true) do |form| %>
   <% if product.errors.any? %>
     <div id="error_explanation", class="alert">
-      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+      <h2><%= pluralize(product.errors.count, "error") %> interdit la sauvegarde de ce produit :</h2>
 
       <ul>
         <% product.errors.full_messages.each do |message| %>
-          <li class="_list"><%= message %></li>
+          <%if message.include?("Description") %>
+            <li class="_list">La description ne peut pas être vide</li>
+          <% end %>
+          <%if message.include?("Price") %>
+            <li class="_list">Le prix ne peut pas être vide</li>
+          <% end %>
         <% end %>
       </ul>
     </div>

@@ -8,7 +8,12 @@
     </h2>
     <ul>
       <% resource.errors.full_messages.each do |message| %>
-        <li class="_list"><%= message %></li>
+        <%if message.include?("Password") %>
+            <li class="_list">Le Password ne peut pas être vide</li>
+          <% end %>
+          <%if message.include?("Email") %>
+            <li class="_list">Email ne peut pas être vide</li>
+          <% end %>
       <% end %>
     </ul>
   </div>

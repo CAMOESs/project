@@ -12,8 +12,15 @@
 
       <ul>
         <% @product.errors.full_messages.each do |message| %>
-          <li class="_list"><%= message %></li>
+          <%if message.include?("Description") %>
+            <li class="_list">La description ne peut pas être vide</li>
+          <% end %>
+          <%if message.include?("Price") %>
+            <li class="_list">Le prix ne peut pas être vide</li>
+          <% end %>
         <% end %>
+
+        
       </ul>
     </div>
   <% end %>
